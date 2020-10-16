@@ -1,0 +1,20 @@
+{
+    "name": "cbet/cbet",
+    "description": "cbet project",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Benjamin Krief",
+            "email": "benjaminkri@hotmail.fr"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\" : "App"
+        }
+    }
+
+
+
+}

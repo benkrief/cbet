@@ -1,0 +1,207 @@
+#ban {
+  display:block;
+  position: relative;
+  width: 100%;
+  height:400px ;
+  top: 0%;
+  left: 0%;
+  background:#174684;
+}
+#ban img{
+  width:400px;
+  height: 390px;
+  position: relative;
+  left:32%;
+  margin: 2em;
+  margin-bottom: 2em;
+  
+  
+}
+#phrase {
+  margin-top: 2em;
+  border:solid;
+  border-radius: 80%;
+  background-color: lightsteelblue;
+  width: 30%;
+  height: 50%;
+  position: relative;
+  left:33%;
+  font-family: "Cookie";
+  font-size: x-large;
+
+}
+
+ul.menu_onglet {
+  display: table;
+  width: 96.5em;
+  height: 70%;
+  
+  margin-bottom: 1px;
+  background: -webkit-linear-gradient(rgb(92, 199, 241), rgb(255, 157, 0));
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  font-family: "Prociono", serif;
+  font-size: 85%;
+  position: sticky;
+
+}
+
+ul.menu_onglet li {
+  display: table-cell;
+  
+}
+
+ul.menu_onglet li a {
+  display: block;
+  text-align: center;
+  color: rgb(255, 251, 0);
+  text-decoration:none;
+  padding: 8px 8px 8px 8px;
+  text-shadow: 0 1px 0 rgba(9, 147, 226, 0.4);
+  transition: all 0.3s 0.1s;
+  position: relative;
+  font-family: Bangers;
+  font-size: x-large;
+  font-variant: inherit;
+  
+  }
+  
+  ul.menu_onglet li a:hover,
+  ul.menu_onglet li a:focus {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 25px 8px 25px;
+    transition: all 0.3s 0s;
+  }
+  
+  ul.menu_onglet li a:active {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3) inset;
+  }
+  
+  ul li a::before {
+    
+    position: absolute;
+    left: 50%;
+    bottom: 3px;
+    margin-left: -2px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  ul.menu_onglet li a:hover::before,
+  ul.menu_onglet li a:focus::before {
+    background: white;
+    box-shadow: 0 0 2px white, 0 -1px 0 rgba(0, 0, 0, 0.4);
+  }
+
+
+h2{
+  width: 50%;
+  padding: 8px;
+  text-align: center;
+  
+}
+.text {
+  background-color: #174684;
+  position: relative;
+  top:0px;
+  padding: 10px;
+  height: 19em;
+}
+.text h2{
+  top: 10px;
+  font-family: 'Alegreya SC', serif;
+  text-align:center ;
+  color: #565959;
+  filter: blur(0px) brightness(100%) contrast(106%) grayscale(0%) saturate(200%) sepia(0%);
+  width: 18em;
+}
+
+.text div{
+  position: relative;
+  top: 20px;
+  background: #C6FFDD; 
+  background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD); 
+  background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);
+  position: relative;
+  left:25%;
+  border-radius: 5px;
+  padding: 20px;
+  width: 650px;
+  color:#565959;
+  text-align: center;
+  font-size: large;
+  font-family: Libre Bakersville;
+
+}
+.text button{
+  background: #d81e05;
+  font-family: Bangers, cursive;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 15px;
+  height: 80px;
+  width: 9em;
+  border-radius: 30px;
+  border-width: 5px;
+  border-color: #9b301c;
+  position: relative;
+  top:20px;
+  left:40%;
+  
+}
+
+.selectquizz{
+  background-color: indianred;
+  
+}
+.selectquizz h2 {
+  border: 9px outset #f3680b;
+  background-color: rgba(165, 42, 42, 0.733);
+  width: 100%;
+  color: aliceblue;
+  font-family: Bungee Shade;
+  
+}
+.selectquizz .block-heading p{
+  color: white;
+  text-decoration: underline;
+  text-align: center;
+  font-size: small;
+  font-family:Domine, serif;
+ 
+}
+.momentquiz{
+  background-color:indianred;
+}
+.carousel-inner{
+  background-color: #f3680b;
+}
+.desc{
+  text-align: center;
+  font-family: bungee Shade;
+  font-variant: common-ligatures tabular-nums;
+  
+
+}
+.desc h3{
+  padding:7px;
+}
+a:-webkit-any-link {
+  text-decoration: none;
+  color:pink;
+  
+}
+
+
+footer {
+
+
+  background-color: coral;
+  position: relative;
+  bottom: 0;
+  margin-bottom: -3em;
+  width: 100%;
+  
+}
