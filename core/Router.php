@@ -1,5 +1,5 @@
 <?php
-namespace App\Core;
+namespace Core;
 use App\src\controller\DefaultController;
 class Router{
     public function loadRoutes(){
