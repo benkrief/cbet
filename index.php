@@ -1,5 +1,6 @@
 <?php
-require 'vendor/autoload.php';
+
+require_once 'vendor/autoload.php';
 
 $router = new Core\Router();
 $router->loadRoutes();
