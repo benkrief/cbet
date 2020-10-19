@@ -1,6 +1,6 @@
 <?php
-namespace Core;
-use App\src\controller\DefaultController;
+namespace core;
+use src\controller\DefaultController;
 class Router{
     public function loadRoutes(){
         try{
