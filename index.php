@@ -1,7 +1,7 @@
 <?php
 
 require_once 'vendor/autoload.php';
-use Core\Router;   
+use App\Core\Router; 
 
 $router = new Router();
 $router->loadRoutes();
