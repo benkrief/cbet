@@ -11,8 +11,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "App\\src": "src/",
-            "App\\core":"core"
+            "App\\src\\": "src/"
             
             
         }
