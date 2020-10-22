@@ -1,5 +1,5 @@
 <?php
-namespace src\controller;
+namespace src\controllers;
 
 require_once("smodel/model.php");
 
