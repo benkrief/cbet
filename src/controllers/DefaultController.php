@@ -1,7 +1,7 @@
 <?php
 namespace App\src\controllers;
 
-require_once("smodel/model.php");
+require_once("model/model.php");
 
 
 class DefaultController{
