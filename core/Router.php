@@ -1,6 +1,6 @@
 <?php
 namespace core;
-use src\controller\DefaultController;
+use src\controllers\DefaultController;
 class Router{
     public function loadRoutes(){
         try{
@@ -11,7 +11,7 @@ class Router{
             $action = $_GET['action'];
 
             if(isset($_GET['page']) && $_GET['page'] === 'registration'){
-                //$controller = new CustomerController();
+                echo 'hola';
             } else {
                 $controller = new DefaultController();
             }
