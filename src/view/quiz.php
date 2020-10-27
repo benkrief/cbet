@@ -1,4 +1,12 @@
-<?php require_once("template/base.php") ?>
+    <?php
+        ob_start();
+    ?>
+        <main class="quiz">
+            <p>ICI C'est le quiz avec tous les quiz differents</p>
+        </main>
 
+    <?php 
+        $page = ob_get_clean();
 
-<?php require_once("template/footer.html")?> 
+        require 'template/template.php';
+     ?>
