@@ -9,7 +9,8 @@ class Router{
     public function loadRoutes(){
         try{
             if(!isset($_GET['action'])){
-                throw new \Exception('Action must be defined!');
+                $controller = new DefaultController();
+                $controller->home();
             }
 
             $action = $_GET['action'];
