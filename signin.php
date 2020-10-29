@@ -1,4 +1,4 @@
-<html>
+
 <head>
     <link rel="stylesheet" href="account.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
