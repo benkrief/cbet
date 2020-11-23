@@ -10,7 +10,7 @@ require_once 'vendor/autoload.php';
 
 class Router{
     public function loadRoutes(){
-        try{
+        
             if(!isset($_GET['page'])){
                 $controller = new DefaultController;
                 $controller->home();
@@ -28,8 +28,6 @@ class Router{
                 }
                 $controller->{$action}();
             }
-        } catch (\Exception $e){
-            throw new \Exception('An error occured!');
-        }
+       
     }
 }

@@ -2,8 +2,9 @@
         ob_start();
     ?>
         <main class="count">
-            <div>Connection : <?php require_once 'src/view/login.php'; ?></div> <br>
-            <div>Inscription : <?php require_once 'src/view/signin.php';?> </div>
+            
+            <div  id="sign"><?php require_once 'src/view/signin.php';?> </div>
+            <div id="log"><?php require_once 'src/view/login.php'?></div>
 
         </main>
 

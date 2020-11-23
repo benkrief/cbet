@@ -1,12 +1,12 @@
 <?php
 namespace App\src\model;
 
-require_once('vendor\autoload.php');
+require_once 'vendor/autoload.php';
 
 class Client
 {
-    private $id;
-    private $name;
+    private $gender;
+    private $nom;
     private $prenom;
     private $dob; //Date of Birth
     private $adress;
@@ -14,22 +14,22 @@ class Client
     private $password;
 
 
-    public function getId(){
-        return $this->id;
+    public function getGender(){
+        return $this->gender;
     }
 
-    public function setId($id)
+    public function setGender($gender)
     {
-        $this->id = $id;
+        $this->gender = $gender;
     }
 
-    public function getName(){
-        return $this->name;
+    public function getNom(){
+        return $this->nom;
     }
 
-    public function setName($name)
+    public function setNom($nom)
     {
-        $this->name = $name;
+        $this->nom = $nom;
     }
 
     public function getPrenom()
@@ -39,7 +39,7 @@ class Client
 
     public function setPrenom($prenom)
     {
-        $this->lastName = $prenom;
+        $this->prenom = $prenom;
     }
 
     public function getDob()
@@ -49,7 +49,7 @@ class Client
 
     public function setDob($dob)
     {
-        $this->mail = $dob;
+        $this->dob = $dob;
     }
     public function getAdress()
     {
@@ -58,7 +58,7 @@ class Client
 
     public function setAdress($adress)
     {
-        $this->mail = $adress;
+        $this->adress = $adress;
     }
     public function getMail()
     {
@@ -77,17 +77,8 @@ class Client
 
     public function setPassword($password)
     {
-        $this->pass = $password;
+        $this->password = $password;
     }
 
-    public function getLastConnection()
-    {
-        return $this->lastConnection;
-    }
-
-    public function setLastConnection($lastConnection)
-    {
-        $this->lastConnection = $lastConnection;
-    }
 }
 ?>
