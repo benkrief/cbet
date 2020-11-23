@@ -19,6 +19,15 @@ class ClientRepository
         $result = $database->query('SELECT * FROM `client`');
         return $result->fetchAll(\PDO::FETCH_ASSOC);
     }
+    public function getClientInfo($mail)
+    {
+        $database = $this->db->verifConnect();
+        $result = $database->prepare('SELECT * FROM `client` WHERE mail = :mail');
+        $result->bindValue(':mail', $mail, \PDO::PARAM_STR);
+        $result->execute();
+        return $result->fetchAll(\PDO::FETCH_ASSOC);
+    }
+    
 
     public function newClient(Client $client)
     {
@@ -38,6 +47,19 @@ class ClientRepository
         $result->bindValue(':adress', $client->getAdress(), \PDO::PARAM_INT);    
         $result->execute();
     }
+
+
+    public function checkPass(Client $client){
+        $db = $this->database->verifConnect();
+
+        $sql = $db->prepare('SELECT password FROM client WHERE mail = :mail');
+        $sql->bindParam(':mail', $_POST["mail"]);
+        $sql->execute();
+        $result = $sql->fetch();
+        return password_verify($client->getPassword(), $result['password'] ?? null);
+    }
+
+   
 
 }
 ?>
