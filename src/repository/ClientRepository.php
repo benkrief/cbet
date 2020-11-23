@@ -2,6 +2,7 @@
 namespace App\src\repository;
 
 use App\src\config\Db;
+use App\src\config\Session;
 use App\src\model\Client;
 
 class ClientRepository
@@ -11,6 +12,9 @@ class ClientRepository
     {
         if (!isset($this->postRepository)) {
             $this->db = new Db;
+        }
+        if (!isset($this->session)) {            
+            $this->session = new Session;
         }
     }
     public function getClient()
@@ -43,16 +47,20 @@ class ClientRepository
         $result->bindValue(':nom', $client->getNom(), \PDO::PARAM_STR);
         $result->bindValue(':prenom', $client->getPrenom(), \PDO::PARAM_STR);
         $result->bindValue(':dob', $client->getDob(), \PDO::PARAM_STR);
-        var_dump($client->getDob());
-        $result->bindValue(':adress', $client->getAdress(), \PDO::PARAM_INT);    
+        $result->bindValue(':adress', $client->getAdress(), \PDO::PARAM_STR_CHAR);    
         $result->execute();
-    }
 
+        $this->session->set('gender', $client->getGender());
+        $this->session->set('nom', $client->getNom());
+        $this->session->set('prenom', $client->getPrenom());
+        $this->session->set('mail', $client->getMail());
+    }
+    
 
     public function checkPass(Client $client){
-        $db = $this->database->verifConnect();
+        $database = $this->db->verifConnect();
 
-        $sql = $db->prepare('SELECT password FROM client WHERE mail = :mail');
+        $sql = $database->prepare('SELECT password FROM client WHERE mail = :mail');
         $sql->bindParam(':mail', $_POST["mail"]);
         $sql->execute();
         $result = $sql->fetch();

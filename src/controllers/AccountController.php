@@ -1,10 +1,11 @@
 <?php 
+
 namespace App\src\controllers;
 
 use App\src\model\Client;
 use App\src\config\Session;
 use App\src\repository\ClientRepository;
-
+ini_set('display_errors', 'on');
 class AccountController{
     private $clientRepository;
     private $session;
@@ -30,16 +31,15 @@ class AccountController{
             $client->setPrenom($_POST['prenom']);
             $client->setDob($_POST['dob']);
             $client->setAdress($_POST['adress']);
-            $this->session->set('gender', $_POST['gender']);
-            $this->session->set('nom', $_POST['nom']);
-            $this->session->set('prenom', $_POST['prenom']);
-            $this->session->set('mail', $_POST['mail']);
             $this->clientRepository->newClient($client);
-            header('Location: index.php?page=account&action=list');
+            
         }
+       
+        header('Location: index.php?page=account&action=list');
         require 'src/view/account.php';
+        
     }
-    public function log() {
+    public function login() {
         if($this->session->get('mail')){
             header('Location: index.php?page=account&action=list');
         }
@@ -47,9 +47,10 @@ class AccountController{
             $client = new Client;
             $client->setMail($_POST['mail']);
             $client->setPassword($_POST['password']);
+            
 
-            if(($this->clientRepo->checkPass($client))){
-                $clientInfo = $this->clientRepo->getClientInfo($client->getMail());
+            if(($this->clientRepository->checkPass($client))){
+                $clientInfo = $this->clientRepository->getClientInfo($client->getMail());
                 foreach ($clientInfo as $info){
                     $this->session->set('gender', $info['gender']);
                     $this->session->set('nom', $info['nom']);
@@ -62,7 +63,7 @@ class AccountController{
             }
             else{
                 echo "Vos identifiants sont incorrectes";
-                header('Location: index.php?page=account&action=log');
+                header('Location: index.php?page=account&action=login');
             }
             
             
@@ -73,7 +74,9 @@ class AccountController{
     }
     public function list()
     {
-        var_dump($_SESSION);
+        echo $this->session->get('mail');
+        var_dump($this->session);
+        
         
     }
 }
