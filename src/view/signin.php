@@ -34,5 +34,5 @@
              <label for="mdp" >Mot de Passe :</label>
              <input type="password" id="mdp" name="password" class="form-text text-muted"  placeholder="Password">
             </div>
-          <input type="submit"id="s_valid" value="GO">
+          <input type="submit"id="s_valid" name="submit" value="GO">
       </form>

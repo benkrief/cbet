@@ -8,5 +8,13 @@
              <label for="mdp" >Mot de Passe :</label>
              <input type="password" id="mdp" name="password" class="form-text text-muted"  placeholder="Password">
             </div>
-          <input type="submit"id="s_valid" value="Connexion">
+          <input type="submit"id="s_valid" name="submit" value="Connexion">
+          
       </form>
+<?php 
+  if(null!==($this->session->get('error')))
+{
+  var_dump($_SESSION);
+}
+
+?>

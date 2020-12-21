@@ -21,7 +21,7 @@ class AccountController{
     
     public function sign() {
         
-        if($_SERVER['REQUEST_METHOD'] === 'POST')
+        if(isset($_POST['submit']))
         {
             $client = new Client;
             $client->setGender($_POST['gender']);
@@ -40,10 +40,13 @@ class AccountController{
         
     }
     public function login() {
+        
         if($this->session->get('mail')){
             header('Location: index.php?page=account&action=list');
         }
-        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+        
+        if(isset($_POST['submit']))
+        {
             $client = new Client;
             $client->setMail($_POST['mail']);
             $client->setPassword($_POST['password']);
@@ -62,8 +65,9 @@ class AccountController{
                 header('Location: index.php?page=account&action=list');
             }
             else{
-                echo "Vos identifiants sont incorrectes";
-                header('Location: index.php?page=account&action=login');
+                
+                $_SESSION['error']="<label>Vos identifiants sont incorrectes</label>";
+                
             }
             
             
@@ -74,7 +78,7 @@ class AccountController{
     }
     public function list()
     {
-        echo $this->session->get('mail');
+        
         var_dump($this->session);
         
         

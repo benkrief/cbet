@@ -8,11 +8,12 @@ use App\src\model\Client;
 class ClientRepository
 {
     private $db;
+    private $session;
     public function __construct()
     {
-        if (!isset($this->postRepository)) {
-            $this->db = new Db;
-        }
+       
+        $this->db = new Db;
+       
         if (!isset($this->session)) {            
             $this->session = new Session;
         }
@@ -54,6 +55,7 @@ class ClientRepository
         $this->session->set('nom', $client->getNom());
         $this->session->set('prenom', $client->getPrenom());
         $this->session->set('mail', $client->getMail());
+        
     }
     
 

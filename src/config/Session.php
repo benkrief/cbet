@@ -22,5 +22,14 @@ class Session {
     {
         session_destroy();
     }
+
+    public function errorMess($mess){
+        if(isset($_SESSION[$mess])){
+            $message = $this->get($mess);
+            $this->remove($mess);
+            return $message;
+        }
+        
+    }
 }
 ?>
