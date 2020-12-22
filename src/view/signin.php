@@ -41,4 +41,14 @@
              <input type="password" id="mdp" name="password" class="form-text text-muted"  placeholder="Password">
             </div>
           <input type="submit"id="s_valid" name="submit" value="GO">
+          <div class="error" style ="position : relative; bottom:5px;">
+          <?php 
+            
+            if(null !== $this->session->get('error'))
+            {
+              echo '<br><div class="erreur">'.$this->session->errorMess('error').'</div>';
+            }
+            
+          ?>
+          </div>
       </form>

@@ -5,6 +5,8 @@ namespace App\src\controllers;
 use App\src\model\Client;
 use App\src\config\Session;
 use App\src\repository\ClientRepository;
+use Exception;
+
 ini_set('display_errors', 'on');
 class AccountController{
     private $clientRepository;
@@ -25,21 +27,26 @@ class AccountController{
         
         if(isset($_POST['submit']))
         {
-            $client = new Client;
-            $client->setGender($_POST['gender']);
-            $client->setMail($_POST['mail']);
-            $client->setPassword($_POST['password']);
-            $client->setNom($_POST['nom']);
-            $client->setPrenom($_POST['prenom']);
-            $client->setDob($_POST['dob']);
-            $client->setAdress($_POST['adress']);
-            $client->setTel($_POST['tel']);
-            $this->clientRepository->newClient($client);
-            $this->session->set("mail", $_POST['mail']);
-            
+            try
+            {
+                $client = new Client;
+                $client->setGender($_POST['gender']);
+                $client->setMail($_POST['mail']);
+                $client->setPassword($_POST['password']);
+                $client->setNom($_POST['nom']);
+                $client->setPrenom($_POST['prenom']);
+                $client->setDob($_POST['dob']);
+                $client->setAdress($_POST['adress']);
+                $client->setTel($_POST['tel']);
+                $this->clientRepository->newClient($client);
+                $this->session->set("mail", $_POST['mail']);
+                header('Location: index.php?page=account&action=list&usr='.$this->session->get('mail'));
+            }
+            catch(Exception $e){
+                $this->session->set('error','<label>Cette Adresse est déjà utilisée</label>');;
+            }
         }
-       
-        header('Location: index.php?page=account&action=list&usr='.$this->session->get('mail'));
+        
         require 'src/view/account.php';
         
     }
