@@ -103,5 +103,37 @@ class AccountController{
         setcookie('tel');
         header('Location: index.php?page=account&action=login');
     }
+    public function solde(){
+        require 'src/view/solde.php';
+    }
+    public function deposer(){
+        
+        if(isset($_POST['submit'])){
+            $clientInfo = $this->clientRepository->getClientInfo($_COOKIE["pseudo"]);
+            foreach ($clientInfo as $info) {
+                $solde=$info["solde"];
+            }
+            
+            $this->clientRepository->addSolde($solde+$_POST["valeur"],$_COOKIE["pseudo"]);
+            setcookie('solde', $solde+$_POST["valeur"], time() + 365*24*3600, null, null, false, true);
+            header('Location: index.php?page=account&action=list&usr='.$_COOKIE["pseudo"]);
+        }
+        require 'src/view/accountpage.php';
+    }
+    public function retirer(){
+
+        if(isset($_POST['submit'])){
+            
+            $clientInfo = $this->clientRepository->getClientInfo($_COOKIE["pseudo"]);
+            foreach ($clientInfo as $info) {
+                $solde=$info["solde"];
+            }
+            
+            $this->clientRepository->addSolde($solde-$_POST["valeur"],$_COOKIE["pseudo"]);
+            setcookie('solde', $solde-$_POST["valeur"], time() + 365*24*3600, null, null, false, true);
+            header('Location: index.php?page=account&action=list&usr='.$_COOKIE["pseudo"]);
+        }
+        require 'src/view/accountpage.php';
+    }
 }
 ?>

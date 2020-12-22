@@ -36,11 +36,11 @@
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                     <h6 class="mb-0"><img src="assets/img/plus.png" height="75px" width="75px">  Déposer</h6>
-                    <span class="text-secondary"><button style="border: 5px inset #6187E5;border-radius: 10px;">+</button></span>
+                    <span class="text-secondary"><a href="index.php?page=account&action=solde"><button style="border: 5px inset #6187E5;border-radius: 10px;">+</button></a></span>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                     <h6 class="mb-0"><img src="assets/img/moins.png" height="75px" width="75px">  Retirer</h6>
-                    <span class="text-secondary"><button style="border: 5px inset #6187E5;border-radius: 10px;">-</button></span>
+                    <span class="text-secondary"><a href="index.php?page=account&action=solde"><button style="border: 5px inset #6187E5;border-radius: 10px;">-</button></a></span>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                     <h6 class="mb-0"><img src="assets/img/logout.png" height="75px" width="75px">  Se déconnecter</h6>
@@ -92,7 +92,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Address</h6>
+                      <h6 class="mb-0">Addresse</h6>
                     </div>
                     <div class="col-sm-9 text-secondary" style="text-transform : capitalize;">
                     <?php echo $_COOKIE['adress']; ?>
@@ -132,26 +132,23 @@
                   <div class="card h-100">
                     <div class="card-body">
                       <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Historique</i>Votre Dernier Quiz</h6>
-                      <small>Web Design</small>
+                      <small>Nombre de Parties</small>
                       <div class="progress mb-3" style="height: 5px">
                         <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
-                      <small>Website Markup</small>
+                      <small>Parties Remportées</small>
                       <div class="progress mb-3" style="height: 5px">
                         <div class="progress-bar bg-primary" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
-                      <small>One Page</small>
+                      <small>Parties Perdus</small>
                       <div class="progress mb-3" style="height: 5px">
                         <div class="progress-bar bg-primary" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
-                      <small>Mobile Template</small>
+                      <small>Gain Total</small>
                       <div class="progress mb-3" style="height: 5px">
                         <div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
-                      <small>Backend API</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
+                      
                     </div>
                   </div>
                 </div>

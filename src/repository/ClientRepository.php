@@ -51,9 +51,20 @@ class ClientRepository
         $result->bindValue(':adress', $client->getAdress(), \PDO::PARAM_STR_CHAR);
         $result->bindValue(':tel', $client->getTel(), \PDO::PARAM_INT);     
         $result->execute();
-
-    
-        
+    }
+    public function addSolde($val, $usr){
+        $database = $this->db->verifConnect();
+        $result=$database->prepare('UPDATE Client SET solde = (:valeur) WHERE mail=:usr');
+        $result->bindParam(':valeur', $val,\PDO::PARAM_INT);
+        $result->bindParam(':usr', $usr,\PDO::PARAM_STR);
+        $result->execute();
+    }
+    public function lessSolde($val, $usr){
+        $database = $this->db->verifConnect();
+        $result=$database->prepare('UPDATE Client SET solde = (:valeur) WHERE mail=:usr');
+        $result->bindParam(':valeur', $val,\PDO::PARAM_INT);
+        $result->bindParam(':usr', $usr,\PDO::PARAM_STR);
+        $result->execute();
     }
     
 
