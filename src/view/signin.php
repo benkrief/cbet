@@ -21,15 +21,21 @@
             <div class="info">
               <label for="dnais" > Date de Naissance :</label>
               <input type="date" id="dnais" class="form-text text-muted" name="dob" >
+              
             </div>
             <div class="info">
               <label for="adresse" >Votre Adresse :</label>
               <input type="text" id="adresse" class="form-text text-muted" name="adress" placeholder="Adresse">
             </div>
             <div class="info">
+              <label for="mail">Téléphone :</label>
+              <input type="number" id="tel" name ="tel" class="form-text text-muted"  aria-describedby="emailHelp"   placeholder="0612345678" required>
+            </div>
+            <div class="info">
               <label for="mail">Email :</label>
               <input type="email" id="email" name ="mail" class="form-text text-muted"  aria-describedby="emailHelp"  onkeyup="verify('email')" placeholder="cbet@mail.com" required>
             </div>
+            
             <div class="info">
              <label for="mdp" >Mot de Passe :</label>
              <input type="password" id="mdp" name="password" class="form-text text-muted"  placeholder="Password">

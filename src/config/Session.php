@@ -23,10 +23,10 @@ class Session {
         session_destroy();
     }
 
-    public function errorMess($mess){
-        if(isset($_SESSION[$mess])){
-            $message = $this->get($mess);
-            $this->remove($mess);
+    public function errorMess($msg){
+        if(isset($_SESSION[$msg])){
+            $message = $this->get($msg);
+            $this->remove($msg);
             return $message;
         }
         

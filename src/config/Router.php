@@ -5,6 +5,7 @@ use App\src\controllers;
 use App\src\controllers\AccountController;
 use App\src\controllers\DefaultController;
 use App\src\controllers\QuizController;
+use App\src\controllers\FooterController;
 
 require_once 'vendor/autoload.php';
 
@@ -25,6 +26,9 @@ class Router{
                 }
                 if($page === 'account'){
                     $controller = new AccountController;
+                }
+                if($page === 'footer'){
+                    $controller = new FooterController;
                 }
                 $controller->{$action}();
             }

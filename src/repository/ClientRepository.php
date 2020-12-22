@@ -11,7 +11,7 @@ class ClientRepository
     private $session;
     public function __construct()
     {
-       
+
         $this->db = new Db;
        
         if (!isset($this->session)) {            
@@ -40,21 +40,19 @@ class ClientRepository
         $client->setPassword($hashpass);
         $database = $this->db->verifConnect();
 
-        $result = $database->prepare('INSERT INTO Client(gender,mail,password,nom,prenom,dob,adress)
-        VALUES (:gender, :mail, :password , :nom , :prenom, :dob , :adress)');
+        $result = $database->prepare('INSERT INTO Client(gender,mail,password,nom,prenom,dob,adress,tel)
+        VALUES (:gender, :mail, :password , :nom , :prenom, :dob , :adress, :tel)');
         $result->bindValue(':gender', $client->getGender(), \PDO::PARAM_STR);
         $result->bindValue(':mail', $client->getMail(), \PDO::PARAM_STR);
         $result->bindValue(':password', $client->getPassword(), \PDO::PARAM_STR);
         $result->bindValue(':nom', $client->getNom(), \PDO::PARAM_STR);
         $result->bindValue(':prenom', $client->getPrenom(), \PDO::PARAM_STR);
         $result->bindValue(':dob', $client->getDob(), \PDO::PARAM_STR);
-        $result->bindValue(':adress', $client->getAdress(), \PDO::PARAM_STR_CHAR);    
+        $result->bindValue(':adress', $client->getAdress(), \PDO::PARAM_STR_CHAR);
+        $result->bindValue(':tel', $client->getTel(), \PDO::PARAM_INT);     
         $result->execute();
 
-        $this->session->set('gender', $client->getGender());
-        $this->session->set('nom', $client->getNom());
-        $this->session->set('prenom', $client->getPrenom());
-        $this->session->set('mail', $client->getMail());
+    
         
     }
     
@@ -62,11 +60,11 @@ class ClientRepository
     public function checkPass(Client $client){
         $database = $this->db->verifConnect();
 
-        $sql = $database->prepare('SELECT password FROM client WHERE mail = :mail');
-        $sql->bindParam(':mail', $_POST["mail"]);
-        $sql->execute();
-        $result = $sql->fetch();
-        return password_verify($client->getPassword(), $result['password'] ?? null);
+        $result = $database->prepare('SELECT password FROM client WHERE mail = :mail');
+        $result->bindValue(':mail', $client->getMail(), \PDO::PARAM_STR);
+        $result->execute();
+
+        return password_verify($client->getPassword(), $result->fetchColumn());
     }
 
    

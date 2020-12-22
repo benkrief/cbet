@@ -10,8 +10,10 @@ class Client
     private $prenom;
     private $dob; //Date of Birth
     private $adress;
+    private $tel;
     private $mail;
     private $password;
+    private $solde;
 
 
     public function getGender(){
@@ -60,6 +62,14 @@ class Client
     {
         $this->adress = $adress;
     }
+    public function getTel(){
+        return $this->tel;
+    }
+
+    public function setTel($tel)
+    {
+        $this->tel = $tel;
+    }
     public function getMail()
     {
         return $this->mail;
@@ -78,6 +88,14 @@ class Client
     public function setPassword($password)
     {
         $this->password = $password;
+    }
+    public function getSolde(){
+        return $this->solde;
+    }
+
+    public function setSolde($solde)
+    {
+        $this->solde = $solde;
     }
 
 }
