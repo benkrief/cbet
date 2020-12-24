@@ -7,7 +7,7 @@
              <span id="ban"><img src="assets/img/C'BET.gif"></span>
              <div class="text">
             <div><h2>Le principe ? Il est <strong><u>très</u></strong> simple :</h2> 
-                Tu prends un quizz, tu paris, tu réponds juste aux 12 questions et tu récupères ta mise multipliée avec des côtes toujours plus grandes.
+                Tu prends un quizz, tu paris, tu réponds juste aux 10 questions et tu récupères ta mise multipliée avec des côtes toujours plus grandes.
             </div>
                 <button class="btn btn-outline-light btn-lg" type="button">Je choisis !</button>
             </div>
